@@ -9,7 +9,6 @@ namespace Project
 {
     public class Controller
     {
-        //bassanttttt
         DBManager dbMan;
         public Controller()
         {

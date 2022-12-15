@@ -10,7 +10,7 @@ namespace Project
 {
     public class DBManager
     {
-        static string DB_Connection_String = @""; //insert connection after database being created
+        static string DB_Connection_String = @"Data Source=.;Initial Catalog=PROJECT;Integrated Security=True"; //insert connection after database being created
         SqlConnection myConnection;
 
         public DBManager()
