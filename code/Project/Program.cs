@@ -16,7 +16,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Guest_CreatAccount());
+            Application.Run(new Manager_form("MGR591", "2091", null));
         }
     }
 }
