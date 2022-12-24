@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +47,112 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
-    <Compile Include="DBManager.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_ChangePassword.Designer.cs">
+      <DependentUpon>Admin_ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller.cs" />
+    <Compile Include="DBManager.cs" />
+    <Compile Include="Employee_Add_Remove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Add_Remove.Designer.cs">
+      <DependentUpon>Employee_Add_Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Get.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Get.Designer.cs">
+      <DependentUpon>Employee_Get.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expenses_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expenses_Add.Designer.cs">
+      <DependentUpon>Expenses_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback.Designer.cs">
+      <DependentUpon>feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_ChangePassword.Designer.cs">
+      <DependentUpon>Manager_ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_EditInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_EditInfo.Designer.cs">
+      <DependentUpon>Manager_EditInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_form.Designer.cs">
+      <DependentUpon>Manager_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Program_Add_Remove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program_Add_Remove.Designer.cs">
+      <DependentUpon>Program_Add_Remove.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service_Add_Remove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service_Add_Remove.Designer.cs">
+      <DependentUpon>Service_Add_Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_ChangePassword.resx">
+      <DependentUpon>Admin_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_Add_Remove.resx">
+      <DependentUpon>Employee_Add_Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_Get.resx">
+      <DependentUpon>Employee_Get.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expenses_Add.resx">
+      <DependentUpon>Expenses_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feedback.resx">
+      <DependentUpon>feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_ChangePassword.resx">
+      <DependentUpon>Manager_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_EditInfo.resx">
+      <DependentUpon>Manager_EditInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_form.resx">
+      <DependentUpon>Manager_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Program_Add_Remove.resx">
+      <DependentUpon>Program_Add_Remove.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,6 +162,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Service_Add_Remove.resx">
+      <DependentUpon>Service_Add_Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
