@@ -21,6 +21,7 @@ namespace Project
             dbMan.CloseConnection();
         }
         //------------------------------------------INSERT QUERIES---------------------------------------------
+        //Abod
         public int InsertProgram(int id, string description, int capacity, string type, string location, string startDate, string endDate, float fees, int ssn)
         {
             string query = $"insert into HotelProgram values ( {id}, '{description}', {capacity}, '{type}', '{location}', '{startDate}', '{endDate}', {fees}, {ssn});";
@@ -47,8 +48,38 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
+        //HOS
+        public int InsertG(string id, string fname, string mname, string lname, string gender, string phone)
+        {
+            string query = "INSERT INTO Guest " +
+                            "Values ('" + id + "','" + fname + "','" + mname + "','" + lname + "','" + gender + "','" + phone + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        //join program
+        public int JoinP(string Pid, string Gid, string date)
+        {
+            string query = "INSERT INTO JoinProgram " +
+                            "Values ('" + Pid + "','" + Gid + "','" + date + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        //Request service
+        public int RequestS(string Gid, string Sid, string amount, string date)
+        {
+            string query = "INSERT INTO Request " +
+                            "Values ('" + Gid + "','" + Sid + "','" + amount + "','" + date + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        //Submit Feedback
+        public int Feedback(string Gid, string Ftype, string date, string descrip)
+        {
+            string query = "INSERT INTO FeedBack " +
+                            "Values ('" + Gid + "','" + Ftype + "','" + date + "','" + descrip + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
 
         //------------------------------------------SELECT QUERIES---------------------------------------------
+        //Abod
         public DataTable SelectManagerByUsr(string username, string password)
         {
             string query = $"SELECT * from Manager, Employee where ManagerSSN = Employee.EmployeeSSN and Employee.EmployeeUsrName = '" + username + "' and Employee.EmployeePass = '" + password + "'; ";
@@ -117,8 +148,42 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        //------------------------------------------UPDATE QUERIES---------------------------------------------
+        //HOS
+        public DataTable ShowP()
+        {
+            string query = "SELECT ProgramId, ProgramDescription, ProgramCapacity, ProgramType, ProgramLocation, ProgramStartTime, ProgramEndTime, ProgramFees FROM HotelProgram;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable PrID()
+        {
+            string query = "SELECT ProgramId FROM HotelProgram;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable ShowS()
+        {
+            string query = "SELECT ServiceID, ServiceType, ServiceAmount, ServicePrice FROM Service where ServiceAmount > 0;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SrID()
+        {
+            string query = "SELECT ServiceID FROM Service;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable ShowAvailableRoom()
+        {
+            string query = "SELECT RoomID, RoomType, RoomCapacity, RoomPrice FROM Room "
+                + " where RoomResevationStatus = 'U' ;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int getservAm(string Sid)
+        {
+            string query = "SELECT ServiceAmount FROM Service WHERE ServiceID='" + Sid + "';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
 
+
+        //------------------------------------------UPDATE QUERIES---------------------------------------------
+        //Abod
         public int UpdateProgram(int id, string description, int capacity, string type, string location, string startDate, string endDate, float fees, int ssn)
         {
             string query = $"UPDATE HotelProgram SET ProgramDescription = '{description}', ProgramCapacity = {capacity}, ProgramType = '{type}', ProgramLocation = '{location}',  ProgramStartTime = '{startDate}', ProgramEndTime = '{endDate}', ProgramFees = {fees} where ProgramId = {id} and ManagerSSN = {ssn}";
@@ -160,9 +225,25 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
+        //HOS
+        public int BookRoom(string Rid, string Gid)
+        {
+            string query = "UPDATE Room SET GuestID='" + Gid + "' , RoomResevationStatus = 'R' WHERE RoomID='" + Rid + "';";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
+
+        public int UpdateAmountS(string SA, string Sid)
+        {
+            string query = "UPDATE Service SET ServiceAmount = ServiceAmount - '" + SA + "' WHERE ServiceID='" + Sid + "';";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
+
 
 
         //------------------------------------------DELETE QUERIES------------------------------------------
+        //Abod
         public int DeleteEmployee(int ssn)
         {
             string query = $"DELETE  FROM Employee WHERE Employee.EmployeeSSN = {ssn} ";

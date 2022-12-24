@@ -59,6 +59,12 @@
     <Compile Include="Admin_ChangePassword.Designer.cs">
       <DependentUpon>Admin_ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Book_Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book_Room.Designer.cs">
+      <DependentUpon>Book_Room.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Employee_Add_Remove.cs">
@@ -79,11 +85,41 @@
     <Compile Include="Expenses_Add.Designer.cs">
       <DependentUpon>Expenses_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="feedback.cs">
+    <Compile Include="Guest_FeedBack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="feedback.Designer.cs">
-      <DependentUpon>feedback.cs</DependentUpon>
+    <Compile Include="Guest_FeedBack.Designer.cs">
+      <DependentUpon>Guest_FeedBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_CreatAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest_CreatAccount.Designer.cs">
+      <DependentUpon>Guest_CreatAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest_Actions.Designer.cs">
+      <DependentUpon>Guest_Actions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_Join_Hotel_Program.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest_Join_Hotel_Program.Designer.cs">
+      <DependentUpon>Guest_Join_Hotel_Program.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest_RequestService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guest_RequestService.Designer.cs">
+      <DependentUpon>Guest_RequestService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_feedback.Designer.cs">
+      <DependentUpon>Manager_feedback.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager_ChangePassword.cs">
       <SubType>Form</SubType>
@@ -129,6 +165,9 @@
     <EmbeddedResource Include="Admin_ChangePassword.resx">
       <DependentUpon>Admin_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Book_Room.resx">
+      <DependentUpon>Book_Room.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee_Add_Remove.resx">
       <DependentUpon>Employee_Add_Remove.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,8 +177,23 @@
     <EmbeddedResource Include="Expenses_Add.resx">
       <DependentUpon>Expenses_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="feedback.resx">
-      <DependentUpon>feedback.cs</DependentUpon>
+    <EmbeddedResource Include="Guest_FeedBack.resx">
+      <DependentUpon>Guest_FeedBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest_CreatAccount.resx">
+      <DependentUpon>Guest_CreatAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest_Actions.resx">
+      <DependentUpon>Guest_Actions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest_Join_Hotel_Program.resx">
+      <DependentUpon>Guest_Join_Hotel_Program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guest_RequestService.resx">
+      <DependentUpon>Guest_RequestService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_feedback.resx">
+      <DependentUpon>Manager_feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager_ChangePassword.resx">
       <DependentUpon>Manager_ChangePassword.cs</DependentUpon>

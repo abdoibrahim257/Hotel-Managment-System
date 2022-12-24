@@ -176,7 +176,7 @@ namespace Project
 
         private void button9_Click(object sender, EventArgs e)
         {
-            feedback a = new feedback();
+            Manager_feedback a = new Manager_feedback();
             a.Show();
         }
 

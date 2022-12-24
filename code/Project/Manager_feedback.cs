@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class feedback : Form
+    public partial class Manager_feedback : Form
     {
         Controller controllerObj;
-        public feedback()
+        public Manager_feedback()
         {
             InitializeComponent();
             controllerObj = new Controller(); 

@@ -16,7 +16,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin("ADN2192", "123"));
+            Application.Run(new Guest_CreatAccount());
         }
     }
 }

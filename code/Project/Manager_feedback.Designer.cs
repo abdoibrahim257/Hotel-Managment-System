@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class feedback
+    partial class Manager_feedback
     {
         /// <summary>
         /// Required designer variable.
