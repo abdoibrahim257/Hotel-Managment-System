@@ -50,7 +50,7 @@ namespace Project
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackColor = System.Drawing.Color.DarkGray;
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
@@ -63,7 +63,7 @@ namespace Project
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 270);
@@ -75,7 +75,7 @@ namespace Project
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(9, 191);
+            this.button4.Location = new System.Drawing.Point(154, 238);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 26);
             this.button4.TabIndex = 10;
@@ -87,7 +87,7 @@ namespace Project
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(154, 191);
+            this.button3.Location = new System.Drawing.Point(19, 238);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 26);
             this.button3.TabIndex = 9;
@@ -99,7 +99,7 @@ namespace Project
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(9, 223);
+            this.button1.Location = new System.Drawing.Point(19, 201);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 26);
             this.button1.TabIndex = 8;
@@ -127,6 +127,7 @@ namespace Project
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Monotype Corsiva", 12F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(22, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 18);
@@ -146,6 +147,7 @@ namespace Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 12F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(16, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 18);
@@ -165,6 +167,7 @@ namespace Project
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 12F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(22, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 18);
@@ -185,6 +188,7 @@ namespace Project
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 12F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(6, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 18);

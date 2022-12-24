@@ -77,6 +77,20 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
+        //Ashraf
+
+        public int GuestAccount(string username, string password, string ssn)
+        {
+            string query = "INSERT INTO GuestAccount values ('" + username + "','" + password + "','" + ssn + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertGuest(string ssn, string fname, string minit, string lname, string gender, string mobile)
+        {
+            string query = "INSERT INTO Guest values ('" + ssn + "','" + fname + "','" + minit + "', '" + lname + "', '" + gender + "','" + mobile + "');";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
+
 
         //------------------------------------------SELECT QUERIES---------------------------------------------
         //Abod
@@ -181,6 +195,34 @@ namespace Project
             return (int)dbMan.ExecuteScalar(query);
         }
 
+        //Ashrof
+        public int ExistAccount_MGR_Rec(string EmployeeUsrName, string EmployeePass)
+        {
+
+            string query = $"select 1 where EXISTS(select EmployeeUsrName from Employee where EmployeeUsrName = '{EmployeeUsrName}' AND [EmployeePass]= '{EmployeePass}');";
+            return (int)dbMan.ExecuteScalar(query);
+
+        }
+        public int ExistAccount(string UsrName, string password)
+        {
+
+            string query = $"select 1 where EXISTS(select UsrName from GuestAccount where UsrName = '{UsrName}' AND [password]= '{password}');";
+            return (int)dbMan.ExecuteScalar(query);
+
+        }
+        public int CheckIfUserExists(string GuestId)
+        {
+
+            string query = $"select count(GuestId) from Guest where GuestId = '{GuestId}'";
+
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int CheckLoginPrimary(string user)
+        {
+            string query = $"select count(UsrName) from GuestAccount where UsrName = '{user}'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
 
         //------------------------------------------UPDATE QUERIES---------------------------------------------
         //Abod
@@ -240,6 +282,12 @@ namespace Project
 
         }
 
+        //Ashraf 
+        public int UpdateGuestAccount(string UsrName, string password)
+        {
+            string query = "UPDATE GuestAccount SET password='" + password + "' WHERE UsrName='" + UsrName + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
 
         //------------------------------------------DELETE QUERIES------------------------------------------

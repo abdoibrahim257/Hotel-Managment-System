@@ -147,11 +147,35 @@
       <DependentUpon>Program_Add_Remove.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reterive_Guest_password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reterive_Guest_password.Designer.cs">
+      <DependentUpon>reterive_Guest_password.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service_Add_Remove.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Service_Add_Remove.Designer.cs">
       <DependentUpon>Service_Add_Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Signin_guest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signin_guest.designer.cs">
+      <DependentUpon>Signin_guest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Signin_Manager_Rec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signin_Manager_Rec.designer.cs">
+      <DependentUpon>Signin_Manager_Rec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Signup_Guest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signup_Guest.designer.cs">
+      <DependentUpon>Signup_Guest.cs</DependentUpon>
     </Compile>
     <Compile Include="Statistics.cs">
       <SubType>Form</SubType>
@@ -216,8 +240,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reterive_Guest_password.resx">
+      <DependentUpon>reterive_Guest_password.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Service_Add_Remove.resx">
       <DependentUpon>Service_Add_Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signin_guest.resx">
+      <DependentUpon>Signin_guest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signin_Manager_Rec.resx">
+      <DependentUpon>Signin_Manager_Rec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signup_Guest.resx">
+      <DependentUpon>Signup_Guest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
