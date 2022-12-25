@@ -67,6 +67,20 @@ namespace Project
                     }
 
                 }
+                else if (username[0] == 'A' && username[1] == 'D' && username[2] == 'N')
+                {
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Login successfully");
+                        Admin a = new Admin(username,pass);
+                        a.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please, Enter Correct  password");
+                    }
+
+                }
                 else
                 {
 

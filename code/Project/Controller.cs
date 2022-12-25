@@ -91,6 +91,22 @@ namespace Project
 
         }
 
+        public int InsertMgrEmployee_FromADN(int ssn, string user_name, string pass, string fname, string mini, string lname, int age, string Gen, string address, string mob, int salary, string marital)
+        {
+            string query = $"insert into Employee values({ssn}, '{user_name}', '{pass}', '{fname}', '{mini}', '{lname}', {age}, '{Gen}', '{address}', '{mob}', {salary}, '{marital}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int ManagerAccount(string ssn, string T)
+        {
+            string query = "INSERT INTO Manager values ('" + ssn + "','" + T + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertAdmin(int ssn, string user_name, string pass, string fname, string mini, string lname, int age, string Gen, string address, string mob, int salary, string marital)
+        {
+            string query = $"insert into Employee values({ssn}, '{user_name}', '{pass}', '{fname}', '{mini}', '{lname}', {age}, '{Gen}', '{address}', '{mob}', {salary}, '{marital}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
 
         //------------------------------------------SELECT QUERIES---------------------------------------------
         //Abod
@@ -269,7 +285,35 @@ namespace Project
             string query = $"select count(UsrName) from GuestAccount where UsrName = '{user}'";
             return (int)dbMan.ExecuteScalar(query);
         }
+        public int CheckIfMGRExists(string EmployeeSSN)
+        {
 
+            string query = $"select count(EmployeeSSN) from Employee where EmployeeSSN = '{EmployeeSSN}'";
+
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int CheckLoginMGRPrimary(string EmployeeUsrName)
+        {
+            string query = $"select count(EmployeeUsrName) from Employee where EmployeeUsrName = '{EmployeeUsrName}'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public DataTable SelectAdminByUsr(string username, string password)
+        {
+            string query = $"SELECT * from Manager, Employee where ManagerSSN = Employee.EmployeeSSN and Employee.EmployeeUsrName = '" + username + "' and Employee.EmployeePass = '" + password + "'; ";
+            return dbMan.ExecuteReader(query);
+        }
+        public int CheckIfADNExists(string EmployeeSSN)
+        {
+
+            string query = $"select count(EmployeeSSN) from Employee where EmployeeSSN = '{EmployeeSSN}'";
+
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int CheckLoginADNPrimary(string EmployeeUsrName)
+        {
+            string query = $"select count(EmployeeUsrName) from Employee where EmployeeUsrName = '{EmployeeUsrName}'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
 
         //------------------------------------------UPDATE QUERIES---------------------------------------------
         //Abod
@@ -341,7 +385,11 @@ namespace Project
             string query = "UPDATE GuestAccount SET password='" + password + "' WHERE UsrName='" + UsrName + "';";
             return dbMan.ExecuteNonQuery(query);
         }
-
+        public int UpdateAdminInfo(string fname, string mName, string Lname, string address, int age, char g, string marital, string phone, int ssn)
+        {
+            string query = $"UPDATE Employee SET EmployeeFname = '{fname}', EmployeeMini = '{mName}', EmployeeLname = '{Lname}', EmployeeAge = {age}, EmployeeGender = '{g}', MaritalStat = '{marital}', EmployeePhone = '{phone}', EmployeeAddress = '{address}' WHERE EmployeeSSN = {ssn} ";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         //------------------------------------------DELETE QUERIES------------------------------------------
         //Abod
@@ -350,5 +398,6 @@ namespace Project
             string query = $"DELETE  FROM Employee WHERE Employee.EmployeeSSN = {ssn} ";
             return dbMan.ExecuteNonQuery(query);
         }
+        
     }
 }
