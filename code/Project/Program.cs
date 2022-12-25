@@ -16,7 +16,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Manager_form("MGR591", "2091", null));
+            Application.Run(new Admin("ADN2192","123"));
         }
     }
 }

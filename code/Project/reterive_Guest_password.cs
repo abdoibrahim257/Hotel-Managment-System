@@ -44,8 +44,8 @@ namespace Project
 
                     MessageBox.Show("Password updated successfully");
                     //Guest a1= new Guest();
-                    a1.Show();
-                    this.Hide();
+                    //a1.Show();
+                   // this.Hide();
                 }
             }
             catch

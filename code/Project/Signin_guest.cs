@@ -35,9 +35,9 @@ namespace Project
                 {
                    
                         MessageBox.Show("Login successfully");
-                        Guest Guest1 = new Guest();
-                        Guest1.Show();
-                        this.Hide();
+                        //Guest Guest1 = new Guest();
+                        //Guest1.Show();
+                        //this.Hide();
                    
                 }
                 else

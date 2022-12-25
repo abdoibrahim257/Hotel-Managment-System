@@ -58,8 +58,8 @@ namespace Project
                     {
                         MessageBox.Show("Login successfully");
                         //Receptionist Receptionist1 = new Receptionist();
-                        Receptionist1.Show();
-                        this.Hide();
+                        //Receptionist1.Show();
+                        //this.Hide();
                     }
                     else
                     {
