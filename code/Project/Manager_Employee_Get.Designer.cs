@@ -319,6 +319,11 @@ namespace Project
             this.numericUpDown1.DecimalPlaces = 2;
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.numericUpDown1.Location = new System.Drawing.Point(71, 37);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             20000,
@@ -385,6 +390,11 @@ namespace Project
             this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown2.ForeColor = System.Drawing.Color.Black;
             this.numericUpDown2.Location = new System.Drawing.Point(66, 37);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(127, 22);
             this.numericUpDown2.TabIndex = 17;
@@ -401,7 +411,7 @@ namespace Project
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Employee_Get
+            // Manager_Employee_Get
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -411,7 +421,7 @@ namespace Project
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Employee_Get";
+            this.Name = "Manager_Employee_Get";
             this.Text = "Employee_Get";
             this.Load += new System.EventHandler(this.Employee_Get_Load);
             this.groupBox1.ResumeLayout(false);
