@@ -21,7 +21,7 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Guest_RequestService a = new Guest_RequestService(guestssn);
+            Hotel_Services a = new Hotel_Services(guestssn);
             a.Show();
         }
 
@@ -32,13 +32,13 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Guest_Join_Hotel_Program a = new Guest_Join_Hotel_Program(guestssn);
+            Hotel_Program a = new Hotel_Program(guestssn);
             a.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Guest_FeedBack a = new Guest_FeedBack(guestssn);
+            Feedback a = new Feedback(guestssn);
             a.Show();
         }
 
@@ -50,6 +50,12 @@ namespace Project
         private void button4_Click(object sender, EventArgs e)
         {
             Book_Room a = new Book_Room(guestssn);
+            a.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            View_Payments a = new View_Payments(guestssn);
             a.Show();
         }
     }

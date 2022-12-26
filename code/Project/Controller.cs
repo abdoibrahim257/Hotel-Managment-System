@@ -165,34 +165,81 @@ namespace Project
         //HOS
         public DataTable ShowP()
         {
-            string query = "SELECT ProgramId, ProgramDescription, ProgramCapacity, ProgramType, ProgramLocation, ProgramStartTime, ProgramEndTime, ProgramFees FROM HotelProgram;";
+            string query = "SELECT ProgramId, ProgramDescription, ProgramCapacity, ProgramType, ProgramLocation, ProgramStartTime, ProgramEndTime, ProgramFees FROM HotelProgram where ProgramCapacity > 0 ;";
             return dbMan.ExecuteReader(query);
         }
+
         public DataTable PrID()
         {
-            string query = "SELECT ProgramId FROM HotelProgram;";
+            string query = "SELECT ProgramId FROM HotelProgram where ProgramCapacity > 0;";
             return dbMan.ExecuteReader(query);
         }
+
         public DataTable ShowS()
         {
             string query = "SELECT ServiceID, ServiceType, ServiceAmount, ServicePrice FROM Service where ServiceAmount > 0;";
             return dbMan.ExecuteReader(query);
         }
+
         public DataTable SrID()
         {
-            string query = "SELECT ServiceID FROM Service;";
+            string query = "SELECT ServiceID FROM Service where ServiceAmount > 0;";
             return dbMan.ExecuteReader(query);
         }
+
+        //
         public DataTable ShowAvailableRoom()
         {
             string query = "SELECT RoomID, RoomType, RoomCapacity, RoomPrice FROM Room "
                 + " where RoomResevationStatus = 'U' ;";
             return dbMan.ExecuteReader(query);
         }
+
         public int getservAm(string Sid)
         {
             string query = "SELECT ServiceAmount FROM Service WHERE ServiceID='" + Sid + "';";
             return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int getprogca(string Pid)
+        {
+            string query = "SELECT ProgramCapacity FROM HotelProgram WHERE ProgramId='" + Pid + "';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public DateTime getstartprog(string Pid)
+        {
+            string query = "SELECT ProgramStartTime FROM HotelProgram WHERE ProgramId='" + Pid + "';";
+            return (DateTime)dbMan.ExecuteScalar(query);
+        }
+        //end program date
+        public DateTime getendprog(string Pid)
+        {
+            string query = "SELECT ProgramEndTime FROM HotelProgram WHERE ProgramId='" + Pid + "';";
+            return (DateTime)dbMan.ExecuteScalar(query);
+        }
+
+        ////for payments
+        // for room
+        public object TotalBook(string Gid)
+        {
+            string query = "SELECT SUM(RoomPrice) FROM Room "
+             + " where GuestID='" + Gid + "';";
+            return (object)dbMan.ExecuteScalar(query);
+        }
+        // for program
+        public object TotalProg(string Gid)
+        {
+            string query = "SELECT SUM(ProgramFees) FROM HotelProgram H, JoinProgram P "
+             + " where H.ProgramId=P.ProgramID and P.GuestID='" + Gid + "';";
+            return (object)dbMan.ExecuteScalar(query);
+        }
+
+        // for service
+        public object TotalSer(string Gid)
+        {
+            string query = "SELECT SUM(S.ServicePrice * R.Amount) FROM Service S, Request R "
+             + " where S.ServiceID=R.ServiceID and R.GuestID='" + Gid + "';";
+            return (object)dbMan.ExecuteScalar(query);
         }
 
         //Ashrof
@@ -268,9 +315,9 @@ namespace Project
         }
 
         //HOS
-        public int BookRoom(string Rid, string Gid)
+        public int BookRoom(string Rid, string Gid, string sdate, string edate)
         {
-            string query = "UPDATE Room SET GuestID='" + Gid + "' , RoomResevationStatus = 'R' WHERE RoomID='" + Rid + "';";
+            string query = "UPDATE Room SET GuestID='" + Gid + "' , RoomResevationStatus = 'R' , CheckIn='" + sdate + "' , CheckOut='" + edate + "' WHERE RoomID='" + Rid + "';";
             return dbMan.ExecuteNonQuery(query);
 
         }
@@ -278,6 +325,12 @@ namespace Project
         public int UpdateAmountS(string SA, string Sid)
         {
             string query = "UPDATE Service SET ServiceAmount = ServiceAmount - '" + SA + "' WHERE ServiceID='" + Sid + "';";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
+        public int UpdateProgramC(string Pid)
+        {
+            string query = "UPDATE HotelProgram SET ProgramCapacity = ProgramCapacity - 1  WHERE ProgramId='" + Pid + "';";
             return dbMan.ExecuteNonQuery(query);
 
         }

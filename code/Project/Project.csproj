@@ -85,35 +85,35 @@
     <Compile Include="Expenses_Add.Designer.cs">
       <DependentUpon>Expenses_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Guest_FeedBack.cs">
+    <Compile Include="Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Guest_FeedBack.Designer.cs">
-      <DependentUpon>Guest_FeedBack.cs</DependentUpon>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
     </Compile>
-    <Compile Include="Guest_CreatAccount.cs">
+    <Compile Include="Guest_information.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Guest_CreatAccount.Designer.cs">
-      <DependentUpon>Guest_CreatAccount.cs</DependentUpon>
+    <Compile Include="Guest_information.Designer.cs">
+      <DependentUpon>Guest_information.cs</DependentUpon>
     </Compile>
     <Compile Include="Guest_Actions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Guest_Actions.Designer.cs">
+    <Compile Include="Guest_Actions.designer.cs">
       <DependentUpon>Guest_Actions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Guest_Join_Hotel_Program.cs">
+    <Compile Include="Hotel_Program.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Guest_Join_Hotel_Program.Designer.cs">
-      <DependentUpon>Guest_Join_Hotel_Program.cs</DependentUpon>
+    <Compile Include="Hotel_Program.Designer.cs">
+      <DependentUpon>Hotel_Program.cs</DependentUpon>
     </Compile>
-    <Compile Include="Guest_RequestService.cs">
+    <Compile Include="Hotel_Services.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Guest_RequestService.Designer.cs">
-      <DependentUpon>Guest_RequestService.cs</DependentUpon>
+    <Compile Include="Hotel_Services.Designer.cs">
+      <DependentUpon>Hotel_Services.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager_feedback.cs">
       <SubType>Form</SubType>
@@ -145,6 +145,11 @@
     </Compile>
     <Compile Include="Program_Add_Remove.Designer.cs">
       <DependentUpon>Program_Add_Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectSchemaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectSchemaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reterive_Guest_password.cs">
@@ -183,6 +188,12 @@
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Payments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Payments.designer.cs">
+      <DependentUpon>View_Payments.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,20 +212,20 @@
     <EmbeddedResource Include="Expenses_Add.resx">
       <DependentUpon>Expenses_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Guest_FeedBack.resx">
-      <DependentUpon>Guest_FeedBack.cs</DependentUpon>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Guest_CreatAccount.resx">
-      <DependentUpon>Guest_CreatAccount.cs</DependentUpon>
+    <EmbeddedResource Include="Guest_information.resx">
+      <DependentUpon>Guest_information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guest_Actions.resx">
       <DependentUpon>Guest_Actions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Guest_Join_Hotel_Program.resx">
-      <DependentUpon>Guest_Join_Hotel_Program.cs</DependentUpon>
+    <EmbeddedResource Include="Hotel_Program.resx">
+      <DependentUpon>Hotel_Program.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Guest_RequestService.resx">
-      <DependentUpon>Guest_RequestService.cs</DependentUpon>
+    <EmbeddedResource Include="Hotel_Services.resx">
+      <DependentUpon>Hotel_Services.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager_feedback.resx">
       <DependentUpon>Manager_feedback.cs</DependentUpon>
@@ -258,6 +269,20 @@
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View_Payments.resx">
+      <DependentUpon>View_Payments.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ProjectSchemaDataSet.xsc">
+      <DependentUpon>ProjectSchemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectSchemaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectSchemaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectSchemaDataSet.xss">
+      <DependentUpon>ProjectSchemaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
