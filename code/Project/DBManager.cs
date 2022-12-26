@@ -10,7 +10,7 @@ namespace Project
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"Data Source=DESKTOP-H4J8FKU\SQLEXPRESS;Initial Catalog=ProjectSchema;Integrated Security=True "; //insert connection after database being created
+        static string DB_Connection_String = @"Data Source=.;Initial Catalog=PROJECT;Integrated Security=True"; //insert connection after database being created
         SqlConnection myConnection;
 
         public DBManager()
@@ -93,7 +93,72 @@ namespace Project
             }
         }
 
-        
+
+        //For Procedures
+
+        public DataTable ExecuteReader(string storedProcedureName, Dictionary<string, object> parameters)
+        {
+            try
+            {
+                SqlCommand myCommand = new SqlCommand(storedProcedureName, myConnection);
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                if (parameters != null)
+                {
+                    foreach (KeyValuePair<string, object> Param in parameters)
+                    {
+                        myCommand.Parameters.Add(new SqlParameter(Param.Key, Param.Value));
+                    }
+                }
+
+                SqlDataReader reader = myCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    reader.Close();
+                    return dt;
+                }
+                else
+                {
+                    reader.Close();
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+
+        public int ExecuteNonQuery(string storedProcedureName, Dictionary<string, object> parameters)
+        {
+            try
+            {
+                SqlCommand myCommand = new SqlCommand(storedProcedureName, myConnection);
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                foreach (KeyValuePair<string, object> Param in parameters)
+                {
+                    myCommand.Parameters.Add(new SqlParameter(Param.Key, Param.Value));
+                }
+
+                return myCommand.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+        }
+
+
     }
 }
 ;

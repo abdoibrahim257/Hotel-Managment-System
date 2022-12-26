@@ -90,6 +90,7 @@ namespace Project
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(217, 21);
             this.textBox3.TabIndex = 15;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
@@ -99,6 +100,7 @@ namespace Project
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(217, 21);
             this.textBox2.TabIndex = 14;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox1
             // 
@@ -108,6 +110,7 @@ namespace Project
             this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(217, 21);
             this.textBox1.TabIndex = 13;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label3
             // 
@@ -153,6 +156,7 @@ namespace Project
             this.Controls.Add(this.button2);
             this.Name = "Admin_ChangePassword";
             this.Text = "Admin_ChangePassword";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_ChangePassword_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

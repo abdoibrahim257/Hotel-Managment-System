@@ -65,37 +65,37 @@
     <Compile Include="Admin_EditInfo.designer.cs">
       <DependentUpon>Admin_EditInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Book_Room.cs">
+    <Compile Include="Guest_Book_Room.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Book_Room.Designer.cs">
-      <DependentUpon>Book_Room.cs</DependentUpon>
+    <Compile Include="Guest_Book_Room.Designer.cs">
+      <DependentUpon>Guest_Book_Room.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
-    <Compile Include="Employee_Add_Remove.cs">
+    <Compile Include="Manager_Employee_Add_Remove.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee_Add_Remove.Designer.cs">
-      <DependentUpon>Employee_Add_Remove.cs</DependentUpon>
+    <Compile Include="Manager_Employee_Add_Remove.Designer.cs">
+      <DependentUpon>Manager_Employee_Add_Remove.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee_Get.cs">
+    <Compile Include="Manager_Employee_Get.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee_Get.Designer.cs">
-      <DependentUpon>Employee_Get.cs</DependentUpon>
+    <Compile Include="Manager_Employee_Get.Designer.cs">
+      <DependentUpon>Manager_Employee_Get.cs</DependentUpon>
     </Compile>
-    <Compile Include="Expenses_Add.cs">
+    <Compile Include="Manager_Expenses_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Expenses_Add.Designer.cs">
-      <DependentUpon>Expenses_Add.cs</DependentUpon>
+    <Compile Include="Manager_Expenses_Add.Designer.cs">
+      <DependentUpon>Manager_Expenses_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Feedback.cs">
+    <Compile Include="Guest_Write_Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Feedback.Designer.cs">
-      <DependentUpon>Feedback.cs</DependentUpon>
+    <Compile Include="Guest_Write_Feedback.Designer.cs">
+      <DependentUpon>Guest_Write_Feedback.cs</DependentUpon>
     </Compile>
     <Compile Include="Guest_information.cs">
       <SubType>Form</SubType>
@@ -109,17 +109,17 @@
     <Compile Include="Guest_Actions.designer.cs">
       <DependentUpon>Guest_Actions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotel_Program.cs">
+    <Compile Include="Guest_Hotel_Program.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hotel_Program.Designer.cs">
-      <DependentUpon>Hotel_Program.cs</DependentUpon>
+    <Compile Include="Guest_Hotel_Program.Designer.cs">
+      <DependentUpon>Guest_Hotel_Program.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotel_Services.cs">
+    <Compile Include="Guest_Hotel_Services.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hotel_Services.Designer.cs">
-      <DependentUpon>Hotel_Services.cs</DependentUpon>
+    <Compile Include="Guest_Hotel_Services.Designer.cs">
+      <DependentUpon>Guest_Hotel_Services.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager_feedback.cs">
       <SubType>Form</SubType>
@@ -146,11 +146,11 @@
       <DependentUpon>Manager_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Program_Add_Remove.cs">
+    <Compile Include="Manager_Program_Add_Remove.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program_Add_Remove.Designer.cs">
-      <DependentUpon>Program_Add_Remove.cs</DependentUpon>
+    <Compile Include="Manager_Program_Add_Remove.Designer.cs">
+      <DependentUpon>Manager_Program_Add_Remove.cs</DependentUpon>
     </Compile>
     <Compile Include="ProjectSchemaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -158,47 +158,48 @@
       <DependentUpon>ProjectSchemaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reterive_Guest_password.cs">
+    <Compile Include="Login_reterive_Guest_password.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reterive_Guest_password.Designer.cs">
-      <DependentUpon>reterive_Guest_password.cs</DependentUpon>
+    <Compile Include="Login_reterive_Guest_password.Designer.cs">
+      <DependentUpon>Login_reterive_Guest_password.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service_Add_Remove.cs">
+    <Compile Include="Manager_Service_Add_Remove.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Service_Add_Remove.Designer.cs">
-      <DependentUpon>Service_Add_Remove.cs</DependentUpon>
+    <Compile Include="Manager_Service_Add_Remove.Designer.cs">
+      <DependentUpon>Manager_Service_Add_Remove.cs</DependentUpon>
     </Compile>
-    <Compile Include="Signin_guest.cs">
+    <Compile Include="Login_Signin_guest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Signin_guest.designer.cs">
-      <DependentUpon>Signin_guest.cs</DependentUpon>
+    <Compile Include="Login_Signin_guest.designer.cs">
+      <DependentUpon>Login_Signin_guest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Signin_Manager_Rec.cs">
+    <Compile Include="Login_Manager_Rec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Signin_Manager_Rec.designer.cs">
-      <DependentUpon>Signin_Manager_Rec.cs</DependentUpon>
+    <Compile Include="Login_Manager_Rec.designer.cs">
+      <DependentUpon>Login_Manager_Rec.cs</DependentUpon>
     </Compile>
-    <Compile Include="Signup_Guest.cs">
+    <Compile Include="Login_Signup_Guest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Signup_Guest.designer.cs">
-      <DependentUpon>Signup_Guest.cs</DependentUpon>
+    <Compile Include="Login_Signup_Guest.designer.cs">
+      <DependentUpon>Login_Signup_Guest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Statistics.cs">
+    <Compile Include="Manager_Statistics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Statistics.Designer.cs">
-      <DependentUpon>Statistics.cs</DependentUpon>
+    <Compile Include="Manager_Statistics.Designer.cs">
+      <DependentUpon>Manager_Statistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="View_Payments.cs">
+    <Compile Include="StoredProcedures.cs" />
+    <Compile Include="Guest_View_Payments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View_Payments.designer.cs">
-      <DependentUpon>View_Payments.cs</DependentUpon>
+    <Compile Include="Guest_View_Payments.designer.cs">
+      <DependentUpon>Guest_View_Payments.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -209,20 +210,20 @@
     <EmbeddedResource Include="Admin_EditInfo.resx">
       <DependentUpon>Admin_EditInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Book_Room.resx">
-      <DependentUpon>Book_Room.cs</DependentUpon>
+    <EmbeddedResource Include="Guest_Book_Room.resx">
+      <DependentUpon>Guest_Book_Room.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee_Add_Remove.resx">
-      <DependentUpon>Employee_Add_Remove.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_Employee_Add_Remove.resx">
+      <DependentUpon>Manager_Employee_Add_Remove.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee_Get.resx">
-      <DependentUpon>Employee_Get.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_Employee_Get.resx">
+      <DependentUpon>Manager_Employee_Get.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Expenses_Add.resx">
-      <DependentUpon>Expenses_Add.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_Expenses_Add.resx">
+      <DependentUpon>Manager_Expenses_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Feedback.resx">
-      <DependentUpon>Feedback.cs</DependentUpon>
+    <EmbeddedResource Include="Guest_Write_Feedback.resx">
+      <DependentUpon>Guest_Write_Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guest_information.resx">
       <DependentUpon>Guest_information.cs</DependentUpon>
@@ -230,11 +231,11 @@
     <EmbeddedResource Include="Guest_Actions.resx">
       <DependentUpon>Guest_Actions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hotel_Program.resx">
-      <DependentUpon>Hotel_Program.cs</DependentUpon>
+    <EmbeddedResource Include="Guest_Hotel_Program.resx">
+      <DependentUpon>Guest_Hotel_Program.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hotel_Services.resx">
-      <DependentUpon>Hotel_Services.cs</DependentUpon>
+    <EmbeddedResource Include="Guest_Hotel_Services.resx">
+      <DependentUpon>Guest_Hotel_Services.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager_feedback.resx">
       <DependentUpon>Manager_feedback.cs</DependentUpon>
@@ -248,8 +249,8 @@
     <EmbeddedResource Include="Manager_form.resx">
       <DependentUpon>Manager_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Program_Add_Remove.resx">
-      <DependentUpon>Program_Add_Remove.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_Program_Add_Remove.resx">
+      <DependentUpon>Manager_Program_Add_Remove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -260,26 +261,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="reterive_Guest_password.resx">
-      <DependentUpon>reterive_Guest_password.cs</DependentUpon>
+    <EmbeddedResource Include="Login_reterive_Guest_password.resx">
+      <DependentUpon>Login_reterive_Guest_password.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Service_Add_Remove.resx">
-      <DependentUpon>Service_Add_Remove.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_Service_Add_Remove.resx">
+      <DependentUpon>Manager_Service_Add_Remove.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Signin_guest.resx">
-      <DependentUpon>Signin_guest.cs</DependentUpon>
+    <EmbeddedResource Include="Login_Signin_guest.resx">
+      <DependentUpon>Login_Signin_guest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Signin_Manager_Rec.resx">
-      <DependentUpon>Signin_Manager_Rec.cs</DependentUpon>
+    <EmbeddedResource Include="Login_Manager_Rec.resx">
+      <DependentUpon>Login_Manager_Rec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Signup_Guest.resx">
-      <DependentUpon>Signup_Guest.cs</DependentUpon>
+    <EmbeddedResource Include="Login_Signup_Guest.resx">
+      <DependentUpon>Login_Signup_Guest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Statistics.resx">
-      <DependentUpon>Statistics.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_Statistics.resx">
+      <DependentUpon>Manager_Statistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View_Payments.resx">
-      <DependentUpon>View_Payments.cs</DependentUpon>
+    <EmbeddedResource Include="Guest_View_Payments.resx">
+      <DependentUpon>Guest_View_Payments.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ProjectSchemaDataSet.xsc">
       <DependentUpon>ProjectSchemaDataSet.xsd</DependentUpon>

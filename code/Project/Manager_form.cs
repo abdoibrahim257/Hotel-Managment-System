@@ -44,7 +44,7 @@ namespace Project
             managerUsrName = usrName;
             managerPassword = passWrd;
 
-            DataTable dt = controllerObj.SelectReceptionists();
+            DataTable dt = controllerObj.ProcSelectAllRec();
             comboBox1.DataSource = dt;
             comboBox1.DisplayMember = "ReceptionistSSN";
             comboBox1.ValueMember = "ReceptionistSSN";
@@ -100,7 +100,7 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             //open new form to add / fire employee
-            Employee_Add_Remove a = new Employee_Add_Remove(managerUsrName, managerPassword, profitTable);
+            Manager_Employee_Add_Remove a = new Manager_Employee_Add_Remove(managerUsrName, managerPassword, profitTable);
             a.Show();
             this.Hide();
         }
@@ -117,10 +117,10 @@ namespace Project
             {
                 int EmployeeSSN = Convert.ToInt32(comboBox1.SelectedValue);
 
-                DataTable dt = controllerObj.SelectReceptionistBySSN(EmployeeSSN);
+                DataTable dt = controllerObj.ProcSelectReceptionistWssn(EmployeeSSN);
                 if(dt!=null && dt.Rows.Count == 1)
                 {
-                    Employee_Get a = new Employee_Get(managerUsrName, managerPassword, dt, profitTable);
+                    Manager_Employee_Get a = new Manager_Employee_Get(managerUsrName, managerPassword, dt, profitTable);
                     a.Show();
                     this.Hide();
                 }
@@ -135,21 +135,21 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Service_Add_Remove a = new Service_Add_Remove(managerUsrName, managerPassword, SSN, profitTable);
+            Manager_Service_Add_Remove a = new Manager_Service_Add_Remove(managerUsrName, managerPassword, SSN, profitTable);
             a.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Statistics a = new Statistics(managerUsrName, managerPassword, profitTable, SSN);
+            Manager_Statistics a = new Manager_Statistics(managerUsrName, managerPassword, profitTable, SSN);
             a.Show();
             this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Program_Add_Remove a = new Program_Add_Remove(managerUsrName, managerPassword, SSN, profitTable);
+            Manager_Program_Add_Remove a = new Manager_Program_Add_Remove(managerUsrName, managerPassword, SSN, profitTable);
             a.Show();
             this.Hide();
         }
@@ -167,6 +167,18 @@ namespace Project
         private void button8_Click(object sender, EventArgs e)
         {
 
+            System.Windows.Forms.DialogResult dr = MessageBox.Show("Are you sure you want to LogOut?", "Confirmation Message", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case System.Windows.Forms.DialogResult.Yes:
+                    Login_Manager_Rec a = new Login_Manager_Rec();
+                    a.Show();
+                    this.Close();
+                    break;
+                case System.Windows.Forms.DialogResult.No:
+                    break;
+            }
+            
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)

@@ -155,6 +155,7 @@ namespace Project
             this.textBox5.Size = new System.Drawing.Size(142, 21);
             this.textBox5.TabIndex = 36;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // label12
             // 
@@ -174,9 +175,9 @@ namespace Project
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(425, 214);
+            this.button1.Location = new System.Drawing.Point(417, 200);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 23);
+            this.button1.Size = new System.Drawing.Size(142, 28);
             this.button1.TabIndex = 34;
             this.button1.Text = "Update Info";
             this.button1.UseVisualStyleBackColor = true;
@@ -203,7 +204,7 @@ namespace Project
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(417, 121);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 23);
+            this.comboBox2.Size = new System.Drawing.Size(142, 23);
             this.comboBox2.TabIndex = 32;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -235,7 +236,7 @@ namespace Project
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(417, 83);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(119, 23);
+            this.comboBox1.Size = new System.Drawing.Size(142, 23);
             this.comboBox1.TabIndex = 29;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -258,7 +259,7 @@ namespace Project
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.numericUpDown1.Location = new System.Drawing.Point(417, 52);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(119, 21);
+            this.numericUpDown1.Size = new System.Drawing.Size(142, 21);
             this.numericUpDown1.TabIndex = 27;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
@@ -283,6 +284,7 @@ namespace Project
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(152, 21);
             this.textBox3.TabIndex = 25;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
@@ -291,6 +293,7 @@ namespace Project
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(152, 21);
             this.textBox2.TabIndex = 24;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox1
             // 
@@ -299,6 +302,7 @@ namespace Project
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 21);
             this.textBox1.TabIndex = 23;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label3
             // 

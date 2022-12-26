@@ -51,7 +51,7 @@ namespace Project
             comboBox6.Items.Add("Divorced");
             comboBox6.Items.Add("Widowed");
             comboBox6.Items.Add("Separated");
-            DataTable managers = controllerObj.SelectManager();
+            DataTable managers = controllerObj.ProcSeletAllManager();
             if (managers != null)
             {
                 comboBox5.DataSource = managers;
@@ -97,7 +97,7 @@ namespace Project
         private void comboBox4_DropDownClosed(object sender, EventArgs e)
         {
             string selected = comboBox4.Text;
-            DataTable dt = controllerObj.SelectEmployessWithNoLogin(Convert.ToInt32(selected));
+            DataTable dt = controllerObj.ProcSelectEmpsWnoLogin(Convert.ToInt32(selected));
             label30.Text = dt.Rows[0]["EmployeeUsrName"].ToString();
         }
 
@@ -202,7 +202,7 @@ namespace Project
                 }
                 else
                 {
-                    MessageBox.Show("Failed to fire Manager,Check SSN");
+                    MessageBox.Show("Failed to fire Manager,Check SSN", "Error Message");
 
                 }
 
@@ -214,7 +214,7 @@ namespace Project
         {
             if (text_fname1.Text == "" || text_minit1.Text == "" || text_lname1.Text == "" || text_username1.Text == "" || text_password1.Text == "" || text_ssn1.Text == "" || text_mobile1.Text == "" || age_txt1.Text == "" || AddressMGR1.Text == "" || numericUpDown2.Value == 0 || comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1)
             {
-                MessageBox.Show("Please fill all the information required");
+                MessageBox.Show("Please fill all the information required", "Error Message");
                 return;
 
             }
@@ -224,7 +224,7 @@ namespace Project
                 int existencecheck1 = controllerObj.CheckLoginADNPrimary(text_username1.Text);
                 if (existencecheck != 0 || existencecheck1 != 0)
                 {
-                    MessageBox.Show("Failed to create account. Account already exists with ID or USERNAME");
+                    MessageBox.Show("Failed to create account. Account already exists with ID or USERNAME", "Error Message");
                     return;
                 }
                 int SSNValue;
@@ -232,7 +232,7 @@ namespace Project
                 {
                     if (SSNValue < 0)
                     {
-                        MessageBox.Show("Please Enter a Positive Value in Guest Id");
+                        MessageBox.Show("Please Enter a Positive Value in Guest Id", "Error Message");
                         return;
                     }
 
@@ -242,7 +242,7 @@ namespace Project
                 {
 
 
-                    MessageBox.Show("Please Enter a Positive Value in Mobile");
+                    MessageBox.Show("Please Enter a Positive Value in Mobile", "Error Message");
                     return;
 
 
@@ -251,7 +251,7 @@ namespace Project
                 {
                     if (Value1 < 0)
                     {
-                        MessageBox.Show("Please Enter a Positive Value in Mobile");
+                        MessageBox.Show("Please Enter a Positive Value in Mobile", "Error Message");
                         return;
                     }
 
@@ -261,7 +261,7 @@ namespace Project
                 {
                     if (value11 < 0 || value11 > 100)
                     {
-                        MessageBox.Show("Please Enter a Proper Value For Age");
+                        MessageBox.Show("Please Enter a Proper Value For Age", "Error Message");
                         return;
                     }
 
@@ -271,7 +271,7 @@ namespace Project
                 {
                     if (value5 < 0)
                     {
-                        MessageBox.Show("Please Cahnge Negative User Name");
+                        MessageBox.Show("Please Change Negative User Name", "Error Message");
                         return;
                     }
 
@@ -279,13 +279,13 @@ namespace Project
                 int Value2, Value3, Value4, Value44;
                 if (Int32.TryParse(text_fname1.Text, out Value2) || Int32.TryParse(text_minit1.Text, out Value3) || Int32.TryParse(text_lname1.Text, out Value4))
                 {
-                    MessageBox.Show("Please Enter First or Middle or Last Name in Alphapet(Not integer Values)");
+                    MessageBox.Show("Please Enter First or Middle or Last Name in Alphapet(Not integer Values)", "Error Message");
                     return;
 
                 }
                 if (Int32.TryParse(AddressMGR1.Text, out Value44))
                 {
-                    MessageBox.Show("Please Enter Address in Alphapet(Not integer Values)");
+                    MessageBox.Show("Please Enter Address in Alphapet(Not integer Values)", "Error Message");
                     return;
 
                 }
@@ -295,23 +295,23 @@ namespace Project
                     int result = controllerObj.InsertAdmin(Convert.ToInt32(text_ssn1.Text), text_username1.Text.ToString(), text_password1.Text.ToString(), text_fname1.Text, text_minit1.Text, text_lname1.Text, Convert.ToInt32(age_txt1.Text), comboBox1.Text, AddressMGR1.Text, text_mobile1.Text.ToString(), Convert.ToInt16(numericUpDown2.Value), comboBox2.Text);
                     if (result == 0)
                     {
-                        MessageBox.Show("Failed to create account. Please check your information1");
+                        MessageBox.Show("Failed to create account. Please check your information1", "Error Message");
                         return;
                     }
                     else if (result != 0)
                     {
 
-                        MessageBox.Show("Account added successfully");
+                        MessageBox.Show("Account added successfully", "Confirmation Message");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Manager Start With A D N");
+                    MessageBox.Show("Please Manager Start With A D N", "Error Message");
                 }
             }
             catch
             {
-                MessageBox.Show("Failed to create account For ADMIN. Please check your information2");
+                MessageBox.Show("Failed to create account For ADMIN. Please check your information2", "Error Message");
             }
         }
 
@@ -324,7 +324,7 @@ namespace Project
         {
             if (text_fname.Text == "" || text_minit.Text == "" || text_lname.Text == "" || text_username.Text == "" || text_password.Text == "" || text_ssn.Text == "" || text_mobile.Text == "" || age_txt.Text=="" || AddressMGR.Text == "" || numericUpDown1.Value==0 || comboBox3.SelectedIndex==-1 || comboBox6.SelectedIndex == -1)
             {
-                MessageBox.Show("Please fill all the information required");
+                MessageBox.Show("Please fill all the information required", "Error Message");
                 return;
 
             }
@@ -334,7 +334,7 @@ namespace Project
                 int existencecheck1 = controllerObj.CheckLoginMGRPrimary(text_username.Text);
                 if (existencecheck != 0 || existencecheck1 != 0)
                 {
-                    MessageBox.Show("Failed to create account. Account already exists with ID or USERNAME");
+                    MessageBox.Show("Failed to create account. Account already exists with ID or USERNAME", "Error Message");
                     return;
                 }
                 int SSNValue;
@@ -342,7 +342,7 @@ namespace Project
                 {
                     if (SSNValue < 0)
                     {
-                        MessageBox.Show("Please Enter a Positive Value in Guest Id");
+                        MessageBox.Show("Please Enter a Positive Value in Guest Id", "Error Message");
                         return;
                     }
 
@@ -352,7 +352,7 @@ namespace Project
                 {
 
 
-                    MessageBox.Show("Please Enter a Positive Value in Mobile");
+                    MessageBox.Show("Please Enter a Positive Value in Mobile", "Error Message");
                     return;
 
 
@@ -361,7 +361,7 @@ namespace Project
                 {
                     if (Value1 < 0)
                     {
-                        MessageBox.Show("Please Enter a Positive Value in Mobile");
+                        MessageBox.Show("Please Enter a Positive Value in Mobile", "Error Message");
                         return;
                     }
 
@@ -371,7 +371,7 @@ namespace Project
                 {
                     if (value11 < 0 || value11>100)
                     {
-                        MessageBox.Show("Please Enter a Positive Value in Age");
+                        MessageBox.Show("Please Enter a Positive Value in Age", "Error Message");
                         return;
                     }
 
@@ -381,7 +381,7 @@ namespace Project
                 {
                     if (value5 < 0)
                     {
-                        MessageBox.Show("Please Cahnge Negative User Name");
+                        MessageBox.Show("Please Cahnge Negative User Name", "Error Message");
                         return;
                     }
 
@@ -389,13 +389,13 @@ namespace Project
                 int Value2, Value3, Value4,Value44;
                 if (Int32.TryParse(text_fname.Text, out Value2) || Int32.TryParse(text_minit.Text, out Value3) || Int32.TryParse(text_lname.Text, out Value4))
                 {
-                    MessageBox.Show("Please Enter First or Middle or Last Name in Alphapet(Not integer Values)");
+                    MessageBox.Show("Please Enter First or Middle or Last Name in Alphapet(Not integer Values)", "Error Message");
                     return;
 
                 }
                 if (Int32.TryParse(AddressMGR.Text, out Value44) )
                 {
-                    MessageBox.Show("Please Enter Address in Alphapet(Not integer Values)");
+                    MessageBox.Show("Please Enter Address in Alphapet(Not integer Values)", "Error Message");
                     return;
 
                 }
@@ -406,13 +406,13 @@ namespace Project
                     int result2 = controllerObj.ManagerAccount(text_ssn.Text,dateTimePicker1.Value.ToString("yyyy-MM-dd")); 
                     if (result == 0)
                     {
-                        MessageBox.Show("Failed to create account. Please check your information1");
+                        MessageBox.Show("Failed to create account. Please check your information1", "Error Message");
                         return;
                     }
                     else if (result != 0 && result2!=0)
                     {
 
-                        MessageBox.Show("Account added successfully");
+                        MessageBox.Show("Account added successfully", "Confirmation Message");
 
 
 
@@ -420,12 +420,12 @@ namespace Project
                 }
                 else 
                 {
-                    MessageBox.Show("Please Manager Start With M G R");
+                    MessageBox.Show("Please Manager Start With M G R", "Error Message");
                 }
             }
             catch
             {
-                MessageBox.Show("Failed to create account For Manager. Please check your information2");
+                MessageBox.Show("Failed to create account For Manager. Please check your information2", "Error Message");
             }
         }
 
@@ -453,9 +453,163 @@ namespace Project
 
         }
 
-        private void comboBox4_DisplayMemberChanged(object sender, EventArgs e)
+        private void text_username1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_password1_KeyDown(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void text_password1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void text_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_username_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_fname1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_minit1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_lname1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_lname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_minit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_mobile1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_mobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_ssn1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_ssn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void age_txt1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void age_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void text_fname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
     }

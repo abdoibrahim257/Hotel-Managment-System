@@ -58,5 +58,17 @@ namespace Project
         {
             this.Close();
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Admin_ChangePassword_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

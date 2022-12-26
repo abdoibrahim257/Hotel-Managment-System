@@ -251,6 +251,7 @@ namespace Project
             this.age_txt.Name = "age_txt";
             this.age_txt.Size = new System.Drawing.Size(95, 21);
             this.age_txt.TabIndex = 132;
+            this.age_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.age_txt_KeyPress);
             // 
             // text_ssn
             // 
@@ -261,6 +262,7 @@ namespace Project
             this.text_ssn.Name = "text_ssn";
             this.text_ssn.Size = new System.Drawing.Size(95, 21);
             this.text_ssn.TabIndex = 131;
+            this.text_ssn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_ssn_KeyPress);
             // 
             // label31
             // 
@@ -366,6 +368,7 @@ namespace Project
             this.text_mobile.Name = "text_mobile";
             this.text_mobile.Size = new System.Drawing.Size(95, 21);
             this.text_mobile.TabIndex = 117;
+            this.text_mobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_mobile_KeyPress);
             // 
             // label11
             // 
@@ -430,6 +433,7 @@ namespace Project
             this.text_fname.Name = "text_fname";
             this.text_fname.Size = new System.Drawing.Size(95, 21);
             this.text_fname.TabIndex = 110;
+            this.text_fname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_fname_KeyPress);
             // 
             // label7
             // 
@@ -451,6 +455,7 @@ namespace Project
             this.text_lname.Name = "text_lname";
             this.text_lname.Size = new System.Drawing.Size(95, 21);
             this.text_lname.TabIndex = 108;
+            this.text_lname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_lname_KeyPress);
             // 
             // label6
             // 
@@ -469,10 +474,10 @@ namespace Project
             this.text_minit.ForeColor = System.Drawing.Color.Black;
             this.text_minit.Location = new System.Drawing.Point(324, 95);
             this.text_minit.Margin = new System.Windows.Forms.Padding(2);
-            this.text_minit.MaxLength = 1;
             this.text_minit.Name = "text_minit";
             this.text_minit.Size = new System.Drawing.Size(105, 21);
             this.text_minit.TabIndex = 106;
+            this.text_minit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_minit_KeyPress);
             // 
             // bla
             // 
@@ -489,21 +494,24 @@ namespace Project
             // 
             this.text_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.text_username.ForeColor = System.Drawing.Color.Black;
-            this.text_username.Location = new System.Drawing.Point(231, 44);
+            this.text_username.Location = new System.Drawing.Point(217, 46);
             this.text_username.Margin = new System.Windows.Forms.Padding(2);
             this.text_username.Name = "text_username";
-            this.text_username.Size = new System.Drawing.Size(95, 21);
+            this.text_username.Size = new System.Drawing.Size(120, 21);
             this.text_username.TabIndex = 104;
+            this.text_username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_username_KeyPress);
             // 
             // text_password
             // 
-            this.text_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.text_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.text_password.ForeColor = System.Drawing.Color.Black;
             this.text_password.Location = new System.Drawing.Point(433, 46);
             this.text_password.Margin = new System.Windows.Forms.Padding(2);
             this.text_password.Name = "text_password";
-            this.text_password.Size = new System.Drawing.Size(95, 21);
+            this.text_password.PasswordChar = '*';
+            this.text_password.Size = new System.Drawing.Size(140, 20);
             this.text_password.TabIndex = 103;
+            this.text_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_password_KeyPress);
             // 
             // label4
             // 
@@ -532,12 +540,13 @@ namespace Project
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Monotype Corsiva", 13F, System.Drawing.FontStyle.Italic);
-            this.label12.Location = new System.Drawing.Point(152, 44);
+            this.label12.Location = new System.Drawing.Point(138, 46);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 21);
             this.label12.TabIndex = 99;
             this.label12.Text = "Username";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // groupBox3
             // 
@@ -580,11 +589,12 @@ namespace Project
             // 
             this.age_txt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.age_txt1.ForeColor = System.Drawing.Color.Black;
-            this.age_txt1.Location = new System.Drawing.Point(543, 168);
+            this.age_txt1.Location = new System.Drawing.Point(543, 162);
             this.age_txt1.Margin = new System.Windows.Forms.Padding(2);
             this.age_txt1.Name = "age_txt1";
             this.age_txt1.Size = new System.Drawing.Size(95, 21);
             this.age_txt1.TabIndex = 134;
+            this.age_txt1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.age_txt1_KeyPress);
             // 
             // numericUpDown2
             // 
@@ -595,14 +605,14 @@ namespace Project
             0,
             0,
             0});
-            this.numericUpDown2.Location = new System.Drawing.Point(324, 169);
+            this.numericUpDown2.Location = new System.Drawing.Point(324, 163);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             20000,
             0,
             0,
             0});
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(105, 21);
+            this.numericUpDown2.Size = new System.Drawing.Size(95, 21);
             this.numericUpDown2.TabIndex = 133;
             // 
             // text_ssn1
@@ -614,6 +624,7 @@ namespace Project
             this.text_ssn1.Name = "text_ssn1";
             this.text_ssn1.Size = new System.Drawing.Size(95, 21);
             this.text_ssn1.TabIndex = 132;
+            this.text_ssn1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_ssn1_KeyPress);
             // 
             // comboBox2
             // 
@@ -679,6 +690,7 @@ namespace Project
             this.text_mobile1.Name = "text_mobile1";
             this.text_mobile1.Size = new System.Drawing.Size(95, 21);
             this.text_mobile1.TabIndex = 117;
+            this.text_mobile1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_mobile1_KeyPress);
             // 
             // label16
             // 
@@ -743,6 +755,7 @@ namespace Project
             this.text_fname1.Name = "text_fname1";
             this.text_fname1.Size = new System.Drawing.Size(95, 21);
             this.text_fname1.TabIndex = 110;
+            this.text_fname1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_fname1_KeyPress);
             // 
             // label20
             // 
@@ -764,6 +777,7 @@ namespace Project
             this.text_lname1.Name = "text_lname1";
             this.text_lname1.Size = new System.Drawing.Size(95, 21);
             this.text_lname1.TabIndex = 108;
+            this.text_lname1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_lname1_KeyPress);
             // 
             // label21
             // 
@@ -782,10 +796,10 @@ namespace Project
             this.text_minit1.ForeColor = System.Drawing.Color.Black;
             this.text_minit1.Location = new System.Drawing.Point(324, 95);
             this.text_minit1.Margin = new System.Windows.Forms.Padding(2);
-            this.text_minit1.MaxLength = 1;
             this.text_minit1.Name = "text_minit1";
             this.text_minit1.Size = new System.Drawing.Size(95, 21);
             this.text_minit1.TabIndex = 106;
+            this.text_minit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_minit1_KeyPress);
             // 
             // label22
             // 
@@ -802,21 +816,25 @@ namespace Project
             // 
             this.text_username1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.text_username1.ForeColor = System.Drawing.Color.Black;
-            this.text_username1.Location = new System.Drawing.Point(231, 44);
+            this.text_username1.Location = new System.Drawing.Point(217, 44);
             this.text_username1.Margin = new System.Windows.Forms.Padding(2);
             this.text_username1.Name = "text_username1";
-            this.text_username1.Size = new System.Drawing.Size(95, 21);
+            this.text_username1.Size = new System.Drawing.Size(120, 21);
             this.text_username1.TabIndex = 104;
+            this.text_username1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_username1_KeyPress);
             // 
             // text_password1
             // 
-            this.text_password1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.text_password1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.text_password1.ForeColor = System.Drawing.Color.Black;
             this.text_password1.Location = new System.Drawing.Point(433, 46);
             this.text_password1.Margin = new System.Windows.Forms.Padding(2);
             this.text_password1.Name = "text_password1";
-            this.text_password1.Size = new System.Drawing.Size(95, 21);
+            this.text_password1.PasswordChar = '*';
+            this.text_password1.Size = new System.Drawing.Size(140, 20);
             this.text_password1.TabIndex = 103;
+            this.text_password1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_password1_KeyDown);
+            this.text_password1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_password1_KeyPress);
             // 
             // label23
             // 
@@ -844,12 +862,13 @@ namespace Project
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Monotype Corsiva", 13F, System.Drawing.FontStyle.Italic);
-            this.label25.Location = new System.Drawing.Point(152, 44);
+            this.label25.Location = new System.Drawing.Point(138, 46);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(75, 21);
             this.label25.TabIndex = 99;
             this.label25.Text = "Username";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // groupBox4
             // 
@@ -964,6 +983,7 @@ namespace Project
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(134, 21);
             this.textBox8.TabIndex = 129;
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             // 
             // textBox9
             // 
@@ -972,8 +992,10 @@ namespace Project
             this.textBox9.Location = new System.Drawing.Point(115, 142);
             this.textBox9.Margin = new System.Windows.Forms.Padding(2);
             this.textBox9.Name = "textBox9";
+            this.textBox9.PasswordChar = '*';
             this.textBox9.Size = new System.Drawing.Size(134, 21);
             this.textBox9.TabIndex = 128;
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox9_KeyPress);
             // 
             // label27
             // 

@@ -97,10 +97,29 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
             Admin a = new Admin(adminUsername, adminPassword);
             a.Show();
             this.Close();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Admin_EditInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

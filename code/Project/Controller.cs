@@ -20,6 +20,90 @@ namespace Project
         {
             dbMan.CloseConnection();
         }
+
+        //------------------------------------------Procedure Functions---------------------------------------------
+
+        public DataTable ProcSeletAllManager()
+        {
+            string StoredProcedureName = StoredProcedures.seletcAllManagerProc;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        
+        public DataTable ProcSelectAllRec()
+        {
+            string StoredProcedureName = StoredProcedures.procSelectAllRec;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        } 
+        public DataTable ProcSelectFeedBack()
+        {
+            string StoredProcedureName = StoredProcedures.procSelectFeedBack;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable ProcPrID()
+        {
+            string StoredProcedureName = StoredProcedures.procPrID;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable ProcSrID()
+        {
+            string StoredProcedureName = StoredProcedures.procSrID;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+
+
+        public DataTable ProcSelectEmpsWnoLogin(int ssn)
+        {
+            string StoredProcedureName = StoredProcedures.procSelectEmpsWnoLogin;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ssn", ssn);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable ProcSelectManagerWssn(int ssn)
+        {
+            string StoredProcedureName = StoredProcedures.procSelectManagerWssn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ssn", ssn);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable ProcSelectReceptionistWssn(int ssn)
+        {
+            string StoredProcedureName = StoredProcedures.procSelectReceptionistWssn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ssn", ssn);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable ProcSelectProgram(int id)
+        {
+            string StoredProcedureName = StoredProcedures.procSelectProgram;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+        public DataTable ProcSelectGuestID(string username, string password)
+        {
+            string StoredProcedureName = StoredProcedures.procSelectGuestID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+            Parameters.Add("@password", password);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+        public int ProcInsertService(int id, string type, int capacity, float fees, int ssn)
+        {
+            string StoredProcedureName = StoredProcedures.procInsertService;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@type", type);
+            Parameters.Add("@capacity", capacity);
+            Parameters.Add("@fee", fees);
+            Parameters.Add("@ssn", ssn);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+
+
+
         //------------------------------------------INSERT QUERIES---------------------------------------------
         //Abod
         public int InsertProgram(int id, string description, int capacity, string type, string location, string startDate, string endDate, float fees, int ssn)
@@ -117,7 +201,7 @@ namespace Project
         }        
         public DataTable SelectManager(int ssn)
         {
-            string query = $"SELECT * from Manager, Employee where ManagerSSN = {ssn};";
+            string query = $"SELECT * from Manager, Employee where ManagerSSN = {ssn} and ManagerSSN = EmployeeSSN;";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectManager()
@@ -174,7 +258,12 @@ namespace Project
         }
         public DataTable SelectEmployessWithNoLogin(int ssn)
         {
-            string query = $"SELECT EmployeeUsrName from Employee where ((Employee.EmployeeUsrName = 'r' and Employee.EmployeePass = 'r') or ((Employee.EmployeeUsrName = 'm' and Employee.EmployeePass = 'm'))) and (EmployeeSSN = {ssn});;"; // r small for recptionist and m small for manager
+            string query = $"SELECT EmployeeUsrName from Employee where ((Employee.EmployeeUsrName = 'r' and Employee.EmployeePass = 'r') or ((Employee.EmployeeUsrName = 'm' and Employee.EmployeePass = 'm'))) and (EmployeeSSN = {ssn});"; // r small for recptionist and m small for manager
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectGuestID(string username, string password)
+        {
+            string query = $"SELECT Guest.GuestId from Guest, GuestAccount where GuestAccount.GuestID = Guest.GuestId and GuestAccount.UsrName = '{username}' and GuestAccount.password = '{password}';";
             return dbMan.ExecuteReader(query);
         }
 
@@ -202,7 +291,7 @@ namespace Project
             string query = "SELECT ServiceID FROM Service where ServiceAmount > 0;";
             return dbMan.ExecuteReader(query);
         }
-
+        
         //
         public DataTable ShowAvailableRoom()
         {
@@ -269,7 +358,7 @@ namespace Project
         public int ExistAccount(string UsrName, string password)
         {
 
-            string query = $"select 1 where EXISTS(select UsrName from GuestAccount where UsrName = '{UsrName}' AND [password]= '{password}');";
+            string query = $"select count(UsrName) from GuestAccount where UsrName = '{UsrName}' AND [password]= '{password}';";
             return (int)dbMan.ExecuteScalar(query);
 
         }
@@ -314,6 +403,9 @@ namespace Project
             string query = $"select count(EmployeeUsrName) from Employee where EmployeeUsrName = '{EmployeeUsrName}'";
             return (int)dbMan.ExecuteScalar(query);
         }
+
+        
+
 
         //------------------------------------------UPDATE QUERIES---------------------------------------------
         //Abod
@@ -390,6 +482,8 @@ namespace Project
             string query = $"UPDATE Employee SET EmployeeFname = '{fname}', EmployeeMini = '{mName}', EmployeeLname = '{Lname}', EmployeeAge = {age}, EmployeeGender = '{g}', MaritalStat = '{marital}', EmployeePhone = '{phone}', EmployeeAddress = '{address}' WHERE EmployeeSSN = {ssn} ";
             return dbMan.ExecuteNonQuery(query);
         }
+
+       
 
         //------------------------------------------DELETE QUERIES------------------------------------------
         //Abod

@@ -21,7 +21,7 @@ namespace Project
 
         private void feedback_Load(object sender, EventArgs e)
         {
-            DataTable dt = controllerObj.SelectFeedBack();
+            DataTable dt = controllerObj.ProcSelectFeedBack();
             if (dt != null)
             {
                 dataGridView1.DataSource = dt;

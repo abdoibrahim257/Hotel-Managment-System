@@ -39,20 +39,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(95, 27);
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 30F, System.Drawing.FontStyle.Italic);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(55, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 25);
+            this.label1.Size = new System.Drawing.Size(281, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "Options Available";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(75, 116);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(87, 134);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(237, 39);
+            this.button1.Size = new System.Drawing.Size(217, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Show Hotel Programs";
             this.button1.UseVisualStyleBackColor = true;
@@ -60,10 +61,10 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(75, 170);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(87, 188);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(237, 43);
+            this.button2.Size = new System.Drawing.Size(217, 38);
             this.button2.TabIndex = 2;
             this.button2.Text = "Show Hotel Services";
             this.button2.UseVisualStyleBackColor = true;
@@ -71,10 +72,10 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(111, 230);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(87, 249);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(169, 45);
+            this.button3.Size = new System.Drawing.Size(217, 36);
             this.button3.TabIndex = 3;
             this.button3.Text = "Give Feedback";
             this.button3.UseVisualStyleBackColor = true;
@@ -82,10 +83,10 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(111, 55);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button4.Location = new System.Drawing.Point(87, 83);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 43);
+            this.button4.Size = new System.Drawing.Size(217, 33);
             this.button4.TabIndex = 4;
             this.button4.Text = "Book Room";
             this.button4.UseVisualStyleBackColor = true;
@@ -93,10 +94,10 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(111, 293);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button5.Location = new System.Drawing.Point(87, 303);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(169, 45);
+            this.button5.Size = new System.Drawing.Size(217, 36);
             this.button5.TabIndex = 5;
             this.button5.Text = "View Payments";
             this.button5.UseVisualStyleBackColor = true;
@@ -107,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(103)))), ((int)(((byte)(119)))));
-            this.ClientSize = new System.Drawing.Size(406, 372);
+            this.ClientSize = new System.Drawing.Size(403, 376);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
